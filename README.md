@@ -1,8 +1,3 @@
-Sling Jenkins jobs creation
----------------------------
+# Apache Sling Scripting HTL Integration Tests
 
-The scripts found in this folder are used to create the Jenkins jobs
-listed at https://builds.apache.org/view/S-Z/view/Sling/
-
-See https://cwiki.apache.org/confluence/display/SLING/Sling+Jenkins+Setup
-for more info.
+This module is part of the [Apache Sling](https://sling.apache.org) project.

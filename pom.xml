@@ -42,6 +42,7 @@
     </scm>
 
     <properties>
+        <sling.java.version>8</sling.java.version>
         <!-- run modes for integration tests -->
         <sling.run.modes>oak_tar</sling.run.modes>
 

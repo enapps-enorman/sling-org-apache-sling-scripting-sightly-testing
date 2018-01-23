@@ -20,8 +20,6 @@
 [feature name=sling]
 # Dependencies
 [artifacts]
-  org.apache.sling/org.apache.sling.starter/10-SNAPSHOT/slingstart
-  org.apache.sling/org.apache.sling.scripting.javascript/3.0.3-SNAPSHOT
   org.apache.sling/org.apache.sling.scripting.sightly.compiler
   org.apache.sling/org.apache.sling.scripting.sightly.compiler.java
   org.apache.sling/org.apache.sling.scripting.sightly

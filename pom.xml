@@ -28,7 +28,11 @@
 
     <artifactId>org.apache.sling.scripting.sightly.testing</artifactId>
     <packaging>slingstart</packaging>
-    <version>1.0.5-SNAPSHOT</version>
+    <!--
+        The versioning scheme defined here corresponds to SLING-7406 (<module_version>-<htl_specification_version>). Take care when
+        releasing to only increase the first part, unless the module provides support for a newer version of the HTL specification.
+    -->
+    <version>1.0.5-1.3.1-SNAPSHOT</version>
 
     <name>Apache Sling Scripting HTL Integration Tests</name>
     <description>This project runs the integration tests for validating the Apache Sling Scripting HTL implementation

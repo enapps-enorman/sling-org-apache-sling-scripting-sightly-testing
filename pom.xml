@@ -76,12 +76,12 @@
 
         <jacoco.maven.plugin.version>0.7.9</jacoco.maven.plugin.version>
         <!-- HTL modules under test versions -->
-        <org.apache.sling.scripting.sightly.compiler.version>1.0.19-1.3.1-SNAPSHOT</org.apache.sling.scripting.sightly.compiler.version>
-        <org.apache.sling.scripting.sightly.compiler.java.version>1.0.21-1.3.1-SNAPSHOT</org.apache.sling.scripting.sightly.compiler.java.version>
-        <org.apache.sling.scripting.sightly.version>1.0.47-1.3.1-SNAPSHOT</org.apache.sling.scripting.sightly.version>
+        <org.apache.sling.scripting.sightly.compiler.version>1.0.21-1.3.1-SNAPSHOT</org.apache.sling.scripting.sightly.compiler.version>
+        <org.apache.sling.scripting.sightly.compiler.java.version>1.0.23-1.3.1-SNAPSHOT</org.apache.sling.scripting.sightly.compiler.java.version>
+        <org.apache.sling.scripting.sightly.version>1.0.49-1.3.1-SNAPSHOT</org.apache.sling.scripting.sightly.version>
         <org.apache.sling.scripting.sightly.js.provider.version>1.0.27-SNAPSHOT</org.apache.sling.scripting.sightly.js.provider.version>
         <org.apache.sling.scripting.sightly.models.provider.version>1.0.7-SNAPSHOT</org.apache.sling.scripting.sightly.models.provider.version>
-        <org.apache.sling.scripting.sightly.testing.content.version>1.0.7-1.3.1-SNAPSHOT</org.apache.sling.scripting.sightly.testing.content.version>
+        <org.apache.sling.scripting.sightly.testing.content.version>1.0.9-1.3.1-SNAPSHOT</org.apache.sling.scripting.sightly.testing.content.version>
     </properties>
 
     <build>
@@ -235,8 +235,37 @@
                                 [feature name=sling]
                                 # Dependencies
                                 [artifacts]
-                                org.apache.sling/org.apache.sling.launchpad/9/slingstart
-                                org.apache.sling/org.apache.sling.scripting.javascript/3.0.4
+                                org.apache.sling/org.apache.sling.starter/10/slingstart
+                            </model>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>stable</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <org.apache.sling.scripting.sightly.compiler.version>1.0.20-1.3.1</org.apache.sling.scripting.sightly.compiler.version>
+                <org.apache.sling.scripting.sightly.compiler.java.version>1.0.22-1.3.1</org.apache.sling.scripting.sightly.compiler.java.version>
+                <org.apache.sling.scripting.sightly.version>1.0.48-1.3.1</org.apache.sling.scripting.sightly.version>
+                <org.apache.sling.scripting.sightly.js.provider.version>1.0.26</org.apache.sling.scripting.sightly.js.provider.version>
+                <org.apache.sling.scripting.sightly.models.provider.version>1.0.6</org.apache.sling.scripting.sightly.models.provider.version>
+                <org.apache.sling.scripting.sightly.testing.content.version>1.0.8-1.3.1</org.apache.sling.scripting.sightly.testing.content.version>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.sling</groupId>
+                        <artifactId>slingstart-maven-plugin</artifactId>
+                        <configuration>
+                            <model>
+                                [feature name=sling]
+                                # Dependencies
+                                [artifacts]
+                                org.apache.sling/org.apache.sling.starter/10/slingstart
                             </model>
                         </configuration>
                     </plugin>
@@ -492,37 +521,37 @@
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.compiler</artifactId>
-            <version>1.0.21-1.3.1-SNAPSHOT</version>
+            <version>${org.apache.sling.scripting.sightly.compiler.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.compiler.java</artifactId>
-            <version>1.0.23-1.3.1-SNAPSHOT</version>
+            <version>${org.apache.sling.scripting.sightly.compiler.java.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly</artifactId>
-            <version>1.0.49-1.3.1-SNAPSHOT</version>
+            <version>${org.apache.sling.scripting.sightly.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.js.provider</artifactId>
-            <version>1.0.27-SNAPSHOT</version>
+            <version>${org.apache.sling.scripting.sightly.js.provider.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.models.provider</artifactId>
-            <version>1.0.7-SNAPSHOT</version>
+            <version>${org.apache.sling.scripting.sightly.models.provider.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.testing-content</artifactId>
-            <version>1.0.9-1.3.1-SNAPSHOT</version>
+            <version>${org.apache.sling.scripting.sightly.testing.content.version}</version>
             <scope>provided</scope>
         </dependency>
 

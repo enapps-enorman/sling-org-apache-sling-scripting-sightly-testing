@@ -29,6 +29,7 @@ import org.junit.FixMethodOrder;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 
+import io.sightly.tck.Constants;
 import io.sightly.tck.http.Client;
 
 /**
@@ -58,13 +59,8 @@ public class PerformanceIT {
      */
     public PerformanceIT() {
         serverURL = System.getProperty(Constants.SYS_PROP_SERVER_URL);
-        String user = System.getProperty(Constants.SYS_PROP_USER);
-        String password = System.getProperty(Constants.SYS_PROP_PASS);
-        if (StringUtils.isNotEmpty(user) && StringUtils.isNotEmpty(password)) {
-            client = new Client(user, password);
-        } else {
-            client = new Client();
-        }
+        client = new Client(System.getProperty(io.sightly.tck.Constants.SYS_PROP_USER, "admin"),
+                System.getProperty(io.sightly.tck.Constants.SYS_PROP_PASS, "admin"));
     }
 
     /**

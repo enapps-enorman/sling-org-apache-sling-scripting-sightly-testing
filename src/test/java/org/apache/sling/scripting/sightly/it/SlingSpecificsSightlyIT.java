@@ -21,21 +21,22 @@ package org.apache.sling.scripting.sightly.it;
 import java.io.IOException;
 
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.EntityBuilder;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.entity.mime.content.InputStreamBody;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.sling.testing.clients.util.FormEntityBuilder;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import io.sightly.tck.Constants;
 import io.sightly.tck.html.HTMLExtractor;
 import io.sightly.tck.http.Client;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
 public class SlingSpecificsSightlyIT {
 
@@ -68,8 +69,9 @@ public class SlingSpecificsSightlyIT {
 
     @BeforeClass
     public static void init() {
-        client = new Client();
         launchpadURL = System.getProperty("launchpad.http.server.url");
+        client = new Client(System.getProperty(io.sightly.tck.Constants.SYS_PROP_USER, "admin"),
+                System.getProperty(io.sightly.tck.Constants.SYS_PROP_PASS, "admin"));
     }
 
     @Test

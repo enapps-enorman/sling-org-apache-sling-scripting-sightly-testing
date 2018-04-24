@@ -64,6 +64,7 @@ public class SlingSpecificsSightlyIT {
     private static final String SLING_I18N = "/sightly/i18n";
     private static final String TCK_XSS = "/sightlytck/exprlang/xss.html";
     private static final String WHITESPACE = "/sightly/whitespace.html";
+    private static final String SYNTHETIC_RESOURCE = "/sightly/synthetic-resource.html";
 
     @BeforeClass
     public static void init() {
@@ -356,6 +357,13 @@ public class SlingSpecificsSightlyIT {
         assertEquals("true", HTMLExtractor.innerHTML(url, pageContent, "#nbsp"));
         assertEquals("true", HTMLExtractor.innerHTML(url, pageContent, "#tab"));
         assertEquals("true", HTMLExtractor.innerHTML(url, pageContent, "#newline"));
+    }
+
+    @Test
+    public void testSyntheticResourceResolution() {
+        String url = launchpadURL + SYNTHETIC_RESOURCE;
+        String pageContent = client.getStringContent(url, 200);
+        assertEquals("It works!", HTMLExtractor.innerHTML(url, pageContent, "#synthetic-resource-selector"));
     }
 
     private void restartSightlyEngineBundle() throws InterruptedException, IOException {

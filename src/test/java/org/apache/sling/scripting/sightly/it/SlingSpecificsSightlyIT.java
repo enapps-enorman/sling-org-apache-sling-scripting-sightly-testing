@@ -153,6 +153,7 @@ public class SlingSpecificsSightlyIT {
         assertEquals("/sightly/resource", HTMLExtractor.innerHTML(url, pageContent, "#_sightly_resource span" +
                 ".path"));
         assertEquals("false", HTMLExtractor.innerHTML(url, pageContent, "#_sightly_resource span.synthetic"));
+        assertEquals("", HTMLExtractor.innerHTML(url, pageContent, "#wrapper-no-recursion"));
     }
 
     @Test

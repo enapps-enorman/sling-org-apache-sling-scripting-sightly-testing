@@ -32,7 +32,7 @@
         The versioning scheme defined here corresponds to SLING-7406 (<module_version>-<htl_specification_version>). Take care when
         releasing to only increase the first part, unless the module provides support for a newer version of the HTL specification.
     -->
-    <version>1.0.9-1.4.0-SNAPSHOT</version>
+    <version>1.0.10-1.4.0</version>
 
     <name>Apache Sling Scripting HTL Integration Tests</name>
     <description>This project runs the integration tests for validating the Apache Sling Scripting HTL implementation
@@ -43,7 +43,7 @@
         <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-scripting-sightly-testing.git</connection>
         <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-scripting-sightly-testing.git</developerConnection>
         <url>https://gitbox.apache.org/repos/asf?p=sling-org-apache-sling-scripting-sightly-testing.git</url>
-      <tag>HEAD</tag>
+      <tag>org.apache.sling.scripting.sightly.testing-1.0.10-1.4.0</tag>
   </scm>
 
     <properties>
@@ -523,37 +523,37 @@
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.compiler</artifactId>
-            <version>${org.apache.sling.scripting.sightly.compiler.version}</version>
+            <version>1.0.22-1.4.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.compiler.java</artifactId>
-            <version>${org.apache.sling.scripting.sightly.compiler.java.version}</version>
+            <version>1.0.24-1.4.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly</artifactId>
-            <version>${org.apache.sling.scripting.sightly.version}</version>
+            <version>1.0.54-1.4.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.js.provider</artifactId>
-            <version>${org.apache.sling.scripting.sightly.js.provider.version}</version>
+            <version>1.0.26</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.models.provider</artifactId>
-            <version>${org.apache.sling.scripting.sightly.models.provider.version}</version>
+            <version>1.0.6</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.testing-content</artifactId>
-            <version>${org.apache.sling.scripting.sightly.testing.content.version}</version>
+            <version>1.0.10-1.4.0</version>
             <scope>provided</scope>
         </dependency>
 

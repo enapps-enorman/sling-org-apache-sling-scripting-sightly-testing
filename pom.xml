@@ -76,12 +76,12 @@
 
         <jacoco.maven.plugin.version>0.7.9</jacoco.maven.plugin.version>
         <!-- HTL modules under test versions -->
-        <org.apache.sling.scripting.sightly.compiler.version>1.0.25-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.compiler.version>
-        <org.apache.sling.scripting.sightly.compiler.java.version>1.0.23-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.compiler.java.version>
+        <org.apache.sling.scripting.sightly.compiler.version>1.0.23-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.compiler.version>
+        <org.apache.sling.scripting.sightly.compiler.java.version>1.0.27-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.compiler.java.version>
         <org.apache.sling.scripting.sightly.version>1.0.55-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.version>
         <org.apache.sling.scripting.sightly.js.provider.version>1.0.27-SNAPSHOT</org.apache.sling.scripting.sightly.js.provider.version>
         <org.apache.sling.scripting.sightly.models.provider.version>1.0.7-SNAPSHOT</org.apache.sling.scripting.sightly.models.provider.version>
-        <org.apache.sling.scripting.sightly.testing.content.version>1.0.9-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.testing.content.version>
+        <org.apache.sling.scripting.sightly.testing.content.version>1.0.11-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.testing.content.version>
     </properties>
 
     <build>
@@ -250,12 +250,12 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <org.apache.sling.scripting.sightly.compiler.version>1.0.20-1.3.1</org.apache.sling.scripting.sightly.compiler.version>
-                <org.apache.sling.scripting.sightly.compiler.java.version>1.0.22-1.3.1</org.apache.sling.scripting.sightly.compiler.java.version>
-                <org.apache.sling.scripting.sightly.version>1.0.48-1.3.1</org.apache.sling.scripting.sightly.version>
+                <org.apache.sling.scripting.sightly.compiler.version>1.0.22-1.4.0</org.apache.sling.scripting.sightly.compiler.version>
+                <org.apache.sling.scripting.sightly.compiler.java.version>1.0.26-1.4.0</org.apache.sling.scripting.sightly.compiler.java.version>
+                <org.apache.sling.scripting.sightly.version>1.0.54-1.4.0</org.apache.sling.scripting.sightly.version>
                 <org.apache.sling.scripting.sightly.js.provider.version>1.0.26</org.apache.sling.scripting.sightly.js.provider.version>
                 <org.apache.sling.scripting.sightly.models.provider.version>1.0.6</org.apache.sling.scripting.sightly.models.provider.version>
-                <org.apache.sling.scripting.sightly.testing.content.version>1.0.8-1.3.1</org.apache.sling.scripting.sightly.testing.content.version>
+                <org.apache.sling.scripting.sightly.testing.content.version>1.0.10-1.4.0</org.apache.sling.scripting.sightly.testing.content.version>
             </properties>
             <build>
                 <plugins>

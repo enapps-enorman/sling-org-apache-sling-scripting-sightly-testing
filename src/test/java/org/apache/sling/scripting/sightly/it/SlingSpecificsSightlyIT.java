@@ -44,6 +44,8 @@ public class SlingSpecificsSightlyIT {
     private static String launchpadURL;
     private static final String SLING_USE = "/sightly/use.html";
     private static final String SLING_JAVA_USE_NPE = "/sightly/use.javaerror.html";
+    private static final String SLING_JAVA_USE_INTERFACE = "/sightly/use.interface.html";
+    private static final String SLING_JAVA_USE_ABSTRACT = "/sightly/use.abstractClass.html";
     private static final String SLING_RESOURCE = "/sightly/resource.html";
     private static final String SLING_RESOURCE_ACTUAL = "/sightly/actualresource.html";
     private static final String SLING_TEMPLATE = "/sightly/template.html";
@@ -113,6 +115,20 @@ public class SlingSpecificsSightlyIT {
         String url = launchpadURL + SLING_JAVA_USE_NPE;
         String pageContent = client.getStringContent(url, 500);
         assertTrue(pageContent.contains("java.lang.NullPointerException"));
+    }
+
+    @Test
+    public void testInterfaceUset() {
+        String url = launchpadURL + SLING_JAVA_USE_INTERFACE;
+        String pageContent = client.getStringContent(url, 500);
+        assertTrue(pageContent.contains("No use provider could resolve identifier"));
+    }
+
+    @Test
+    public void testAbstractClassUse() {
+        String url = launchpadURL + SLING_JAVA_USE_ABSTRACT;
+        String pageContent = client.getStringContent(url, 500);
+        assertTrue(pageContent.contains("No use provider could resolve identifier"));
     }
 
     @Test

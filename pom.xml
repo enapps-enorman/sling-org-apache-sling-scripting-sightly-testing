@@ -78,7 +78,7 @@
         <!-- HTL modules under test versions -->
         <org.apache.sling.scripting.sightly.compiler.version>1.0.23-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.compiler.version>
         <org.apache.sling.scripting.sightly.compiler.java.version>1.0.27-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.compiler.java.version>
-        <org.apache.sling.scripting.sightly.version>1.0.55-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.version>
+        <org.apache.sling.scripting.sightly.version>1.0.57-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.version>
         <org.apache.sling.scripting.sightly.js.provider.version>1.0.27-SNAPSHOT</org.apache.sling.scripting.sightly.js.provider.version>
         <org.apache.sling.scripting.sightly.models.provider.version>1.0.7-SNAPSHOT</org.apache.sling.scripting.sightly.models.provider.version>
         <org.apache.sling.scripting.sightly.testing.content.version>1.0.11-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.testing.content.version>
@@ -495,14 +495,6 @@
         </profile>
     </profiles>
 
-    <repositories>
-        <repository>
-            <id>oss-sonatype</id>
-            <name>OSS Sonatype</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </repository>
-    </repositories>
-
     <dependencies>
 
         <!-- The integration tests -->
@@ -523,37 +515,37 @@
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.compiler</artifactId>
-            <version>1.0.23-1.4.0-SNAPSHOT</version>
+            <version>${org.apache.sling.scripting.sightly.compiler.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.compiler.java</artifactId>
-            <version>1.0.27-1.4.0-SNAPSHOT</version>
+            <version>${org.apache.sling.scripting.sightly.compiler.java.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly</artifactId>
-            <version>1.0.57-1.4.0-SNAPSHOT</version>
+            <version>${org.apache.sling.scripting.sightly.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.js.provider</artifactId>
-            <version>1.0.26</version>
+            <version>${org.apache.sling.scripting.sightly.js.provider.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.models.provider</artifactId>
-            <version>1.0.6</version>
+            <version>${org.apache.sling.scripting.sightly.models.provider.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.testing-content</artifactId>
-            <version>1.0.13-1.4.0-SNAPSHOT</version>
+            <version>${org.apache.sling.scripting.sightly.testing.content.version}</version>
             <scope>provided</scope>
         </dependency>
 

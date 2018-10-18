@@ -22,7 +22,7 @@
     <parent>
         <groupId>org.apache.sling</groupId>
         <artifactId>sling</artifactId>
-        <version>30</version>
+        <version>34</version>
         <relativePath />
     </parent>
 
@@ -76,9 +76,10 @@
 
         <jacoco.maven.plugin.version>0.7.9</jacoco.maven.plugin.version>
         <!-- HTL modules under test versions -->
-        <org.apache.sling.scripting.sightly.compiler.version>1.0.23-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.compiler.version>
-        <org.apache.sling.scripting.sightly.compiler.java.version>1.0.27-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.compiler.java.version>
-        <org.apache.sling.scripting.sightly.version>1.0.57-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.version>
+        <org.apache.sling.scripting.sightly.runtime.version>1.0.0-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.runtime.version>
+        <org.apache.sling.scripting.sightly.compiler.version>1.1.0-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.compiler.version>
+        <org.apache.sling.scripting.sightly.compiler.java.version>1.1.0-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.compiler.java.version>
+        <org.apache.sling.scripting.sightly.version>1.1.0-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.version>
         <org.apache.sling.scripting.sightly.js.provider.version>1.0.27-SNAPSHOT</org.apache.sling.scripting.sightly.js.provider.version>
         <org.apache.sling.scripting.sightly.models.provider.version>1.0.7-SNAPSHOT</org.apache.sling.scripting.sightly.models.provider.version>
         <org.apache.sling.scripting.sightly.testing.content.version>1.0.11-1.4.0-SNAPSHOT</org.apache.sling.scripting.sightly.testing.content.version>
@@ -512,6 +513,12 @@
         </dependency>
 
         <!-- Launchpad dependencies -->
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.scripting.sightly.runtime</artifactId>
+            <version>${org.apache.sling.scripting.sightly.runtime.version}</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.compiler</artifactId>

@@ -216,7 +216,7 @@
                                 [feature name=sling]
                                 # Dependencies
                                 [artifacts]
-                                org.apache.sling/org.apache.sling.starter/11-SNAPSHOT/slingstart
+                                org.apache.sling/org.apache.sling.starter/12-SNAPSHOT/slingstart
                             </model>
                         </configuration>
                     </plugin>

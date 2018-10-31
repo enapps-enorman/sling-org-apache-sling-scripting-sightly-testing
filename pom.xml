@@ -238,37 +238,7 @@
                                 [feature name=sling]
                                 # Dependencies
                                 [artifacts]
-                                org.apache.sling/org.apache.sling.starter/10/slingstart
-                            </model>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>stable</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <org.apache.sling.scripting.sightly.compiler.version>1.0.22-1.4.0</org.apache.sling.scripting.sightly.compiler.version>
-                <org.apache.sling.scripting.sightly.compiler.java.version>1.0.26-1.4.0</org.apache.sling.scripting.sightly.compiler.java.version>
-                <org.apache.sling.scripting.sightly.version>1.0.54-1.4.0</org.apache.sling.scripting.sightly.version>
-                <org.apache.sling.scripting.sightly.js.provider.version>1.0.26</org.apache.sling.scripting.sightly.js.provider.version>
-                <org.apache.sling.scripting.sightly.models.provider.version>1.0.6</org.apache.sling.scripting.sightly.models.provider.version>
-                <org.apache.sling.scripting.sightly.testing.content.version>1.0.10-1.4.0</org.apache.sling.scripting.sightly.testing.content.version>
-            </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.sling</groupId>
-                        <artifactId>slingstart-maven-plugin</artifactId>
-                        <configuration>
-                            <model>
-                                [feature name=sling]
-                                # Dependencies
-                                [artifacts]
-                                org.apache.sling/org.apache.sling.starter/10/slingstart
+                                org.apache.sling/org.apache.sling.starter/11/slingstart
                             </model>
                         </configuration>
                     </plugin>

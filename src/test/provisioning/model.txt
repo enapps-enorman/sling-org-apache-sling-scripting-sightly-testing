@@ -21,6 +21,11 @@
 # Dependencies
 [artifacts]
   org.antlr/antlr4-runtime/4.7.1
+  org.apache.sling/org.apache.sling.api/2.21.0-SNAPSHOT
+  org.osgi/org.osgi.util.converter/1.0.0
+  org.apache.sling/org.apache.sling.servlets.resolver/2.5.7-SNAPSHOT
+  org.apache.sling/org.apache.sling.resourceresolver/1.6.15-SNAPSHOT
+  org.apache.sling/org.apache.sling.scripting.core/2.0.61-SNAPSHOT
   org.apache.sling/org.apache.sling.scripting.sightly.runtime
   org.apache.sling/org.apache.sling.scripting.sightly.compiler
   org.apache.sling/org.apache.sling.scripting.sightly.compiler.java

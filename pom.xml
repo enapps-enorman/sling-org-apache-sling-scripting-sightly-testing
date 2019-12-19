@@ -33,7 +33,7 @@
     -->
     <version>1.0.19-1.4.0-SNAPSHOT</version>
 
-    <name>Apache Sling Scripting HTL Integration Tests</name>
+    <name>Apache Sling Scripting HTL Testing</name>
     <description>This project runs the integration tests for validating the Apache Sling Scripting HTL implementation
         against the Adobe HTL TCK.
     </description>

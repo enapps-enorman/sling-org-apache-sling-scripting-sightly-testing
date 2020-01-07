@@ -192,6 +192,7 @@
                         <io.sightly.tck.serverURL>http://${test.host}:${http.port}</io.sightly.tck.serverURL>
                         <io.sightly.tck.user>admin</io.sightly.tck.user>
                         <io.sightly.tck.pass>admin</io.sightly.tck.pass>
+                        <launchpad.http.port>${http.port}</launchpad.http.port>
                         <launchpad.http.server.url>http://${test.host}:${http.port}</launchpad.http.server.url>
                         <launchpad.servlet.context>${http.base.path}</launchpad.servlet.context>
                     </systemPropertyVariables>
@@ -229,6 +230,15 @@
                             <modelPattern>sightly.txt</modelPattern>
                         </configuration>
                     </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <configuration>
+                            <systemPropertyVariables>
+                                <IT.expected.bundles.count>184</IT.expected.bundles.count>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
                 </plugins>
             </build>
         </profile>
@@ -244,6 +254,15 @@
                         <artifactId>slingstart-maven-plugin</artifactId>
                         <configuration>
                             <modelDirectory>${project.basedir}/src/test/provisioning</modelDirectory>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <configuration>
+                            <systemPropertyVariables>
+                                <IT.expected.bundles.count>179</IT.expected.bundles.count>
+                            </systemPropertyVariables>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -350,6 +369,12 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpmime</artifactId>
             <version>4.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.utils</artifactId>
+            <version>1.11.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

@@ -103,7 +103,6 @@
                             </goals>
                             <configuration>
                                 <modelDirectory>${project.basedir}/src/test/provisioning</modelDirectory>
-                                <usePomDependencies>true</usePomDependencies>
                             </configuration>
                         </execution>
                         <execution>
@@ -208,8 +207,6 @@
         </plugins>
     </build>
 
-
-
     <profiles>
         <profile>
             <id>snapshot-launchpad</id>
@@ -228,6 +225,8 @@
                                 [artifacts]
                                 org.apache.sling/org.apache.sling.starter/12-SNAPSHOT/slingstart
                             </model>
+                            <modelDirectory>${project.basedir}/src/test/provisioning</modelDirectory>
+                            <modelPattern>sightly.txt</modelPattern>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -244,12 +243,7 @@
                         <groupId>org.apache.sling</groupId>
                         <artifactId>slingstart-maven-plugin</artifactId>
                         <configuration>
-                            <model>
-                                [feature name=sling]
-                                # Dependencies
-                                [artifacts]
-                                org.apache.sling/org.apache.sling.starter/11/slingstart
-                            </model>
+                            <modelDirectory>${project.basedir}/src/test/provisioning</modelDirectory>
                         </configuration>
                     </plugin>
                 </plugins>

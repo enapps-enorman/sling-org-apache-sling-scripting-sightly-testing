@@ -261,7 +261,7 @@
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <configuration>
                             <systemPropertyVariables>
-                                <IT.expected.bundles.count>179</IT.expected.bundles.count>
+                                <IT.expected.bundles.count>178</IT.expected.bundles.count>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>

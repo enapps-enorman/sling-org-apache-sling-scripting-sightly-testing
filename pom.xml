@@ -225,6 +225,7 @@
                                 # Dependencies
                                 [artifacts]
                                 org.apache.sling/org.apache.sling.starter/12-SNAPSHOT/slingstart
+                                org.apache.sling/org.apache.sling.commons.compiler/2.3.7-SNAPSHOT
                             </model>
                             <modelDirectory>${project.basedir}/src/test/provisioning</modelDirectory>
                             <modelPattern>sightly.txt</modelPattern>
@@ -235,7 +236,7 @@
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <configuration>
                             <systemPropertyVariables>
-                                <IT.expected.bundles.count>184</IT.expected.bundles.count>
+                                <IT.expected.bundles.count>183</IT.expected.bundles.count>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>

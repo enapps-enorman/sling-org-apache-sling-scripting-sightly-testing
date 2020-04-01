@@ -27,6 +27,7 @@ import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.entity.mime.content.InputStreamBody;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.sling.testing.clients.util.FormEntityBuilder;
+import org.apache.sling.testing.junit.rules.annotation.IgnoreIfProperty;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -68,6 +69,7 @@ public class SlingSpecificsSightlyIT {
     private static final String TCK_XSS = "/sightlytck/exprlang/xss.html";
     private static final String WHITESPACE = "/sightly/whitespace.html";
     private static final String SYNTHETIC_RESOURCE = "/sightly/synthetic-resource.html";
+    private static final String PRECOMPILED = "/sightly-testing/precompiled.html";
 
     @BeforeClass
     public static void init() {
@@ -383,6 +385,20 @@ public class SlingSpecificsSightlyIT {
         String url = launchpadURL + SYNTHETIC_RESOURCE;
         String pageContent = client.getStringContent(url, 200);
         assertEquals("It works!", HTMLExtractor.innerHTML(url, pageContent, "#synthetic-resource-selector"));
+    }
+
+    @Test
+    public void testPrecompiled() {
+        final String title = "HTL Precompiled Scripts Test";
+        String url = launchpadURL + PRECOMPILED;
+        String pageContent = client.getStringContent(url, 200);
+        assertEquals("/content/sightly-testing/precompiled", HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span" +
+                ".internal-use-pojo"));
+        assertEquals(title, HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.request-adapter"));
+        assertEquals(title, HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.resource-adapter"));
+        assertEquals("SUCCESS", HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.resolver-adapter"));
+        assertEquals(title, HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.request-model"));
+        assertEquals(title, HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.resource-model"));
     }
 
     private void restartSightlyEngineBundle() throws InterruptedException, IOException {

@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.apache.sling</groupId>
-        <artifactId>sling</artifactId>
+        <artifactId>sling-bundle-parent</artifactId>
         <version>35</version>
         <relativePath />
     </parent>
@@ -80,7 +80,7 @@
                 <plugin>
                     <groupId>org.apache.sling</groupId>
                     <artifactId>slingstart-maven-plugin</artifactId>
-                    <version>1.8.2</version>
+                    <version>1.9.4</version>
                     <extensions>true</extensions>
                     <configuration>
                         <usePomDependencies>true</usePomDependencies>
@@ -94,16 +94,15 @@
                             </server>
                         </servers>
                         <disableExtendingMavenClasspath>true</disableExtendingMavenClasspath>
+                        <modelDirectory>${project.basedir}/src/test/provisioning</modelDirectory>
                     </configuration>
                     <executions>
                         <execution>
                             <id>customise-starter</id>
+                            <phase>pre-integration-test</phase>
                             <goals>
                                 <goal>prepare-package</goal>
                             </goals>
-                            <configuration>
-                                <modelDirectory>${project.basedir}/src/test/provisioning</modelDirectory>
-                            </configuration>
                         </execution>
                         <execution>
                             <id>package-starter</id>
@@ -112,7 +111,6 @@
                             </goals>
                             <configuration>
                                 <attachArtifact>false</attachArtifact>
-                                <modelDirectory>${project.basedir}/src/test/provisioning</modelDirectory>
                             </configuration>
                         </execution>
                         <execution>
@@ -140,6 +138,63 @@
                             </includes>
                         </fileset>
                     </filesets>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>htl-maven-plugin</artifactId>
+                <version>1.3.5-1.4.0-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <id>validate-htl-scripts</id>
+                        <goals>
+                            <goal>validate</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <generateJavaClasses>true</generateJavaClasses>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>scriptingbundle-maven-plugin</artifactId>
+                <version>0.1.1-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>metadata</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>biz.aQute.bnd</groupId>
+                <artifactId>bnd-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>bnd-process</id>
+                        <goals>
+                            <goal>bnd-process</goal>
+                        </goals>
+                        <configuration>
+                            <bnd><![CDATA[
+Provide-Capability: ${org.apache.sling.scriptingbundle.maven.plugin.Provide-Capability}
+Require-Capability: osgi.extender;filter:="(&(osgi.extender=sling.scripting)(version>=1.0.0)(!(version>=2.0.0)))",${org.apache.sling.scriptingbundle.maven.plugin.Require-Capability}
+Sling-ResourceType-Precompiled: true
+Sling-Initial-Content: SLING-INF/content;overwrite:=true;path:=/content/sightly-testing
+                                ]]></bnd>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>biz.aQute.bnd</groupId>
+                <artifactId>bnd-baseline-maven-plugin</artifactId>
+                <configuration>
+                    <failOnMissing>false</failOnMissing>
                 </configuration>
             </plugin>
             <plugin>
@@ -226,6 +281,7 @@
                                 [artifacts]
                                 org.apache.sling/org.apache.sling.starter/12-SNAPSHOT/slingstart
                                 org.apache.sling/org.apache.sling.commons.compiler/2.3.7-SNAPSHOT
+                                org.apache.sling/org.apache.sling.scripting.bundle.tracker/0.1.1-SNAPSHOT
                             </model>
                             <modelDirectory>${project.basedir}/src/test/provisioning</modelDirectory>
                             <modelPattern>sightly.txt</modelPattern>
@@ -262,7 +318,7 @@
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <configuration>
                             <systemPropertyVariables>
-                                <IT.expected.bundles.count>178</IT.expected.bundles.count>
+                                <IT.expected.bundles.count>179</IT.expected.bundles.count>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
@@ -272,6 +328,13 @@
     </profiles>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.api</artifactId>
+            <version>2.22.0</version>
+            <scope>provided</scope>
+        </dependency>
 
         <!-- The integration tests -->
         <dependency>

@@ -17,7 +17,10 @@
   ~ under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <div class="precompiled" >
-    <span class="internal-use-pojo" data-sly-use.pojo="org.apache.sling.scripting.sightly.testing.internal.InternalUsePojo">
+    <span class="internal-use-pojo-fqcn" data-sly-use.pojo="org.apache.sling.scripting.sightly.testing.precompiled.InternalUsePojo">
+        ${pojo.resourcePath}
+    </span><br/>
+    <span class="internal-use-pojo-scn" data-sly-use.pojo="InternalUsePojo">
         ${pojo.resourcePath}
     </span><br/>
     <span class="request-adapter"

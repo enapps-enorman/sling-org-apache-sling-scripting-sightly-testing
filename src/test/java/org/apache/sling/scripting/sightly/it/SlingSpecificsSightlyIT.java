@@ -393,7 +393,9 @@ public class SlingSpecificsSightlyIT {
         String url = launchpadURL + PRECOMPILED;
         String pageContent = client.getStringContent(url, 200);
         assertEquals("/content/sightly-testing/precompiled", HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span" +
-                ".internal-use-pojo"));
+                ".internal-use-pojo-fqcn"));
+        assertEquals("/content/sightly-testing/precompiled", HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span" +
+                ".internal-use-pojo-scn"));
         assertEquals(title, HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.request-adapter"));
         assertEquals(title, HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.resource-adapter"));
         assertEquals("SUCCESS", HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.resolver-adapter"));

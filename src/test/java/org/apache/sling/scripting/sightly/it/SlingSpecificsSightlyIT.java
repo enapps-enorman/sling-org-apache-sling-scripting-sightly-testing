@@ -123,14 +123,16 @@ public class SlingSpecificsSightlyIT {
     public void testInterfaceUset() {
         String url = launchpadURL + SLING_JAVA_USE_INTERFACE;
         String pageContent = client.getStringContent(url, 500);
-        assertTrue(pageContent.contains("No use provider could resolve identifier"));
+        assertTrue(pageContent.contains(
+                "org.apache.sling.scripting.sightly.testing.adaptable.NonImplementedInterface represents an interface or an abstract class which cannot be instantiated"));
     }
 
     @Test
     public void testAbstractClassUse() {
         String url = launchpadURL + SLING_JAVA_USE_ABSTRACT;
         String pageContent = client.getStringContent(url, 500);
-        assertTrue(pageContent.contains("No use provider could resolve identifier"));
+        assertTrue(pageContent.contains(
+                "org.apache.sling.scripting.sightly.testing.adaptable.AbstractRequestAdapterUseObject represents an interface or an abstract class which cannot be instantiated"));
     }
 
     @Test
@@ -401,6 +403,13 @@ public class SlingSpecificsSightlyIT {
         assertEquals("SUCCESS", HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.resolver-adapter"));
         assertEquals(title, HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.request-model"));
         assertEquals(title, HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.resource-model"));
+        assertEquals("Hello World!", HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.test-service"));
+        assertEquals("Hello, John Doe", HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.internal-exported-sling-model"));
+        assertEquals("Hello, John Doe", HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.internal-sling-model"));
+        assertEquals("Evaluating ECMA scripts works just fine!", HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.internal-script"));
+        assertEquals("Evaluating Use JS-objects works just fine!", HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span" +
+                ".internal-jsuse-script"));
+        assertEquals("precompiled - org/apache/sling/scripting/sightly/testing/precompiled", HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.provided-jsuse-script"));
     }
 
     private void restartSightlyEngineBundle() throws InterruptedException, IOException {

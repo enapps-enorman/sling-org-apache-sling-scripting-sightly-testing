@@ -17,11 +17,19 @@
   ~ under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <div class="precompiled" >
-    <span class="internal-use-pojo-fqcn" data-sly-use.pojo="org.apache.sling.scripting.sightly.testing.precompiled.InternalUsePojo">
-        ${pojo.resourcePath}
+    <span class="internal-use-pojo-fqcn" data-sly-use.pojoFQCN="org.apache.sling.scripting.sightly.testing.precompiled.InternalUsePojo">
+        ${pojoFQCN.resourcePath}
     </span><br/>
-    <span class="internal-use-pojo-scn" data-sly-use.pojo="InternalUsePojo">
-        ${pojo.resourcePath}
+    <span class="internal-use-pojo-scn" data-sly-use.pojoSCN="InternalUsePojo">
+        ${pojoSCN.resourcePath}
+    </span><br/>
+    <span class="internal-exported-sling-model"
+          data-sly-use.internalExportedSlingModel="${'org.apache.sling.scripting.sightly.testing.precompiled.models.ExportedTestModel' @ name ='John Doe'}">
+        ${internalExportedSlingModel.sayHello}
+    </span><br/>
+    <span class="internal-sling-model"
+          data-sly-use.internalSlingModel="${'org.apache.sling.scripting.sightly.testing.precompiled.models.impl.InternalTestModel'  @ name ='John Doe'}">
+        ${internalSlingModel.sayHello}
     </span><br/>
     <span class="request-adapter"
           data-sly-use.requestAdapter="org.apache.sling.scripting.sightly.testing.adaptable.RequestAdapterUseObject">
@@ -45,6 +53,15 @@
     </span><br/>
     <span class="test-service"
           data-sly-use.testService="org.apache.sling.scripting.sightly.testing.use.TestService">
-        ${testService.title}
+        ${testService.sayHello}
     </span><br/>
+    <span class="internal-script" data-sly-use.scriptEcma="script.ecma">
+        ${scriptEcma}
+    </span><br/>
+    <span class="internal-jsuse-script" data-sly-use.scriptJsUseInternal="script.js">
+        ${scriptJsUseInternal.message}
+    </span><br/>
+    <span class="provided-jsuse-script" data-sly-use.providedJsUse="/apps/sightly/scripts/use/jsuse.js">
+        ${providedJsUse.resourceName} - ${providedJsUse.resourceResourceType}
+    </span>
 </div>

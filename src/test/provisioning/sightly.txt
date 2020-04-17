@@ -25,7 +25,6 @@
   org.apache.sling/org.apache.sling.scripting.sightly.compiler.java
   org.apache.sling/org.apache.sling.scripting.sightly
   org.apache.sling/org.apache.sling.scripting.sightly.js.provider
-  org.apache.sling/org.apache.sling.scripting.sightly.models.provider
   org.apache.sling/org.apache.sling.scripting.sightly.testing-content
   org.apache.sling/org.apache.sling.scripting.sightly.testing
 

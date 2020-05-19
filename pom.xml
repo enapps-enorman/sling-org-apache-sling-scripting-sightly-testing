@@ -293,7 +293,7 @@ Sling-Initial-Content: SLING-INF/content;overwrite:=true;path:=/content/sightly-
                                 [artifacts]
                                 org.apache.sling/org.apache.sling.starter/12-SNAPSHOT/slingstart
                                 org.apache.sling/org.apache.sling.commons.compiler/2.3.7-SNAPSHOT
-                                org.apache.sling/org.apache.sling.scripting.bundle.tracker/0.1.1-SNAPSHOT
+                                org.apache.sling/org.apache.sling.servlets.resolver/2.6.5-SNAPSHOT
                                 org.apache.sling/org.apache.sling.scripting.core/2.2.1-SNAPSHOT
                             </model>
                             <modelPattern>sightly.txt</modelPattern>

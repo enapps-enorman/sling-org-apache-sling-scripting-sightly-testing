@@ -161,7 +161,7 @@
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>scriptingbundle-maven-plugin</artifactId>
-                <version>0.2.3-SNAPSHOT</version>
+                <version>0.2.2</version>
                 <executions>
                     <execution>
                         <phase>process-resources</phase>
@@ -294,7 +294,7 @@ Sling-Initial-Content: SLING-INF/content;overwrite:=true;path:=/content/sightly-
                                 [artifacts]
                                 org.apache.sling/org.apache.sling.starter/12-SNAPSHOT/slingstart
                                 org.apache.sling/org.apache.sling.commons.compiler/2.4.0
-                                org.apache.sling/org.apache.sling.servlets.resolver/2.7.3-SNAPSHOT
+                                org.apache.sling/org.apache.sling.servlets.resolver/2.7.4
                                 org.apache.sling/org.apache.sling.scripting.core/2.3.0
                             </model>
                             <modelPattern>sightly.txt</modelPattern>
@@ -423,7 +423,7 @@ Sling-Initial-Content: SLING-INF/content;overwrite:=true;path:=/content/sightly-
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.js.provider</artifactId>
-            <version>1.2.1-SNAPSHOT</version>
+            <version>1.2.3-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

@@ -205,7 +205,12 @@ public class SlingSpecificsSightlyIT {
     public void testJSUseAPISiblingDependencies() {
         String url = launchpadURL + SLING_JS_DEPENDENCY_RESOLUTION;
         String pageContent = client.getStringContent(url, 200);
-        assertEquals("/apps/sightly/scripts/siblingdeps/dependency.js", HTMLExtractor.innerHTML(url, pageContent, "#js-rep-res"));
+        /*
+            SLING-9580 - Make the dependency resolution more resource-type centric
+            * this test didn't really make sense; a script should first be resolved relative to the resource type that triggered the
+            execution and only if one was not found we should look for a script relative to the calling script
+         */
+        assertEquals("/apps/sightly/scripts/siblingdeps/component/dependency.js", HTMLExtractor.innerHTML(url, pageContent, "#js-rep-res"));
     }
 
     @Test

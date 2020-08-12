@@ -205,12 +205,7 @@ public class SlingSpecificsSightlyIT {
     public void testJSUseAPISiblingDependencies() {
         String url = launchpadURL + SLING_JS_DEPENDENCY_RESOLUTION;
         String pageContent = client.getStringContent(url, 200);
-        /*
-            SLING-9580 - Make the dependency resolution more resource-type centric
-            * this test didn't really make sense; a script should first be resolved relative to the resource type that triggered the
-            execution and only if one was not found we should look for a script relative to the calling script
-         */
-        assertEquals("/apps/sightly/scripts/siblingdeps/component/dependency.js", HTMLExtractor.innerHTML(url, pageContent, "#js-rep-res"));
+        assertEquals("/apps/sightly/scripts/siblingdeps/dependency.js", HTMLExtractor.innerHTML(url, pageContent, "#js-rep-res"));
     }
 
     @Test
@@ -226,6 +221,7 @@ public class SlingSpecificsSightlyIT {
         assertEquals("child.partials.template", HTMLExtractor.innerHTML(url, pageContent, "#partialstemplate"));
         assertEquals("child.partials.included", HTMLExtractor.innerHTML(url, pageContent, "#partialsincluded"));
         assertEquals("child.partials.javaobject", HTMLExtractor.innerHTML(url, pageContent, "#partialsjava"));
+        assertEquals("child.partials.javascript", HTMLExtractor.innerHTML(url, pageContent, "#partials-included-js"));
     }
 
     @Test

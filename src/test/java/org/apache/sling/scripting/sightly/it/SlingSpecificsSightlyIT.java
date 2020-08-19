@@ -55,6 +55,7 @@ public class SlingSpecificsSightlyIT {
     private static final String SLING_JS_DEPENDENCY_RESOLUTION = "/sightly/use-sibling-dependency-resolution.html";
     private static final String SLING_USE_INHERITANCE_WITHOVERLAY = "/sightly/useinheritance.html";
     private static final String SLING_USE_INHERITANCE_WITHOUTOVERLAY = "/sightly/useinheritance.notoverlaid.html";
+    private static final String SLING_USE_INHERITANCE_AND_OVERLAY = "/sightly/inherit.html";
     private static final String SLING_JAVA_USE_POJO_UPDATE = "/sightly/use.repopojo.html";
     private static final String SLING_ATTRIBUTE_QUOTES = "/sightly/attributequotes.html";
     private static final String SLING_CRLF = "/sightly/crlf";
@@ -229,6 +230,13 @@ public class SlingSpecificsSightlyIT {
         String url = launchpadURL + SLING_USE_INHERITANCE_WITHOUTOVERLAY;
         String pageContent = client.getStringContent(url, 200);
         assertEquals("notoverlaid", HTMLExtractor.innerHTML(url, pageContent, "#notoverlaid"));
+    }
+
+    @Test
+    public void testUseAPIInheritanceAndOverlay() {
+        String url = launchpadURL + SLING_USE_INHERITANCE_AND_OVERLAY;
+        String pageContent = client.getStringContent(url, 200);
+        assertEquals("base.js", HTMLExtractor.innerHTML(url, pageContent, "div.include-inherit"));
     }
 
     @Test

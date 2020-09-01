@@ -47,6 +47,7 @@ public class SlingSpecificsSightlyIT {
     private static final String SLING_JAVA_USE_NPE = "/sightly/use.javaerror.html";
     private static final String SLING_JAVA_USE_INTERFACE = "/sightly/use.interface.html";
     private static final String SLING_JAVA_USE_ABSTRACT = "/sightly/use.abstractClass.html";
+    private static final String SLING_JAVA_USE_SLING_MODEL_ERROR = "/sightly/use.slingmodel-error.html";
     private static final String SLING_RESOURCE = "/sightly/resource.html";
     private static final String SLING_RESOURCE_ACTUAL = "/sightly/actualresource.html";
     private static final String SLING_TEMPLATE = "/sightly/template.html";
@@ -419,6 +420,17 @@ public class SlingSpecificsSightlyIT {
         assertEquals("Evaluating Use JS-objects works just fine!", HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span" +
                 ".internal-jsuse-script"));
         assertEquals("precompiled - org/apache/sling/scripting/sightly/testing/precompiled", HTMLExtractor.innerHTML(url, pageContent, "div.precompiled > span.provided-jsuse-script"));
+    }
+
+    @Test
+    public void testSlingModelError() {
+        String url = launchpadURL + SLING_JAVA_USE_SLING_MODEL_ERROR;
+        String pageContent = client.getStringContent(url, 500);
+        assertTrue("Expected that the Sling Model would be instantiated directly via the ModelFactory.",
+            pageContent.contains(
+                "Could not inject private java.lang.String org.apache.sling.scripting.sightly.testing.models.ResourceResolverModel.userID"
+            )
+        );
     }
 
     private void restartSightlyEngineBundle() throws InterruptedException, IOException {

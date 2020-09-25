@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ~ Licensed to the Apache Software Foundation (ASF) under one
   ~ or more contributor license agreements.  See the NOTICE file
   ~ distributed with this work for additional information
@@ -16,18 +15,6 @@
   ~ KIND, either express or implied.  See the License for the
   ~ specific language governing permissions and limitations
   ~ under the License.
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<node>
-    <name>precompiled</name>
-    <primaryNodeType>nt:unstructured</primaryNodeType>
-    <property>
-        <name>sling:resourceType</name>
-        <value>org/apache/sling/scripting/sightly/testing/precompiled</value>
-        <type>String</type>
-    </property>
-    <property>
-        <name>jcr:title</name>
-        <value>HTL Precompiled Scripts Test</value>
-        <type>String</type>
-    </property>
-</node>
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<div class="precompiled-include-wrapper" data-sly-use.templates="/apps/sightly/scripts/templates-access-control/partials/templates.html"
+     data-sly-call="${templates.template}"></div>

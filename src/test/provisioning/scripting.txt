@@ -20,8 +20,18 @@
 [feature name=sling]
 
 [artifacts]
+    # HTL
+    org.apache.sling/org.apache.sling.scripting.sightly.runtime
+    org.apache.sling/org.apache.sling.scripting.sightly.compiler
+    org.apache.sling/org.apache.sling.scripting.sightly.compiler.java
+    org.apache.sling/org.apache.sling.scripting.sightly
+    org.apache.sling/org.apache.sling.scripting.sightly.js.provider
+    org.apache.sling/org.apache.sling.scripting.sightly.testing-content
+    org.apache.sling/org.apache.sling.scripting.sightly.testing
+
+
     org.apache.sling/org.apache.sling.scripting.api/2.2.0
-    org.apache.sling/org.apache.sling.scripting.core/2.3.0
+    org.apache.sling/org.apache.sling.scripting.core
     org.apache.sling/org.apache.sling.scripting.javascript/3.1.2
     org.apache.sling/org.apache.sling.scripting.jsp/2.4.0
     org.apache.sling/org.apache.sling.scripting.jsp-api/1.0.2
@@ -42,7 +52,11 @@
         deny    jcr:all     on /
         allow   jcr:read    on /libs,/apps
     end
-    # SLING-5848 - Define service user and ACLs for Scripting >>>
+
+    create path (sling:Folder) /sightlytck/scripts
+    set ACL for sling-scripting
+        allow   jcr:read    on /sightlytck/scripts
+    end
 
 
 [configurations]
@@ -55,3 +69,12 @@
             "org.apache.sling.scripting.core\=sling-scripting",
             "org.apache.sling.scripting.sightly.js.provider\=sling-scripting",
         ]
+
+    org.apache.sling.commons.log.LogManager.factory.config-2ef75700-a318-4eae-bed4-86777e1bdfd2
+        org.apache.sling.commons.log.pattern="{0,date,dd.MM.yyyy\ HH:mm:ss.SSS}\ *{4}*\ [{2}]\ {3}\ {5}"
+        org.apache.sling.commons.log.names=["org.apache.sling.scripting.sightly.js.impl.jsapi.ProxyAsyncScriptableFactory"]
+        org.apache.sling.commons.log.file="logs/error.log"
+        org.apache.sling.commons.log.level="error"
+
+    org.apache.sling.jcr.resource.internal.JcrResourceResolverFactoryImpl
+        resource.resolver.searchpath=["/apps", "/libs", "/sightlytck/scripts"]

@@ -27,11 +27,9 @@ import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.entity.mime.content.InputStreamBody;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.sling.testing.clients.util.FormEntityBuilder;
-import org.apache.sling.testing.junit.rules.annotation.IgnoreIfProperty;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import io.sightly.tck.Constants;
 import io.sightly.tck.html.HTMLExtractor;
 import io.sightly.tck.http.Client;
 
@@ -431,6 +429,24 @@ public class SlingSpecificsSightlyIT {
                 "Could not inject private java.lang.String org.apache.sling.scripting.sightly.testing.models.ResourceResolverModel.userID"
             )
         );
+    }
+
+    @Test
+    public void testSlingTemplatesAccessControlRepositoryScripts() {
+        Client client = new Client();
+        String classic = launchpadURL + "/content/sightly-testing/templates-access-control/classic.html";
+        String classicPageContent = client.getStringContent(classic, 200);
+        assertEquals("template loaded", HTMLExtractor.innerHTML(classic, classicPageContent, "div.wrapper > div.include-wrapper > div" +
+                ".template"));
+    }
+
+    @Test
+    public void testSlingTemplatesAccessControlBundledScripts() {
+        Client client = new Client();
+        String precompiled = launchpadURL + "/content/sightly-testing/templates-access-control/precompiled.html";
+        String precompiledPageContent = client.getStringContent(precompiled, 200);
+        assertEquals("template loaded", HTMLExtractor.innerHTML(precompiled, precompiledPageContent, "div.precompiled-wrapper > div" +
+                ".precompiled-include-wrapper > div.template"));
     }
 
     private void restartSightlyEngineBundle() throws InterruptedException, IOException {

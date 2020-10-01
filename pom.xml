@@ -316,7 +316,7 @@ Require-Capability: osgi.extender;filter:="(&(osgi.extender=sling.scripting)(ver
         <dependency>
             <groupId>io.sightly</groupId>
             <artifactId>io.sightly.tck</artifactId>
-            <version>1.4.2</version>
+            <version>1.4.3</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>

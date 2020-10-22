@@ -41,41 +41,40 @@ public class SlingSpecificsSightlyIT {
 
     private static Client client;
     private static String launchpadURL;
-    private static final String SLING_USE = "/sightly/use.html";
-    private static final String SLING_JAVA_USE_NPE = "/sightly/use.javaerror.html";
-    private static final String SLING_JAVA_USE_INTERFACE = "/sightly/use.interface.html";
-    private static final String SLING_JAVA_USE_ABSTRACT = "/sightly/use.abstractClass.html";
-    private static final String SLING_JAVA_USE_SLING_MODEL_ERROR = "/sightly/use.slingmodel-error.html";
-    private static final String SLING_RESOURCE = "/sightly/resource.html";
-    private static final String SLING_RESOURCE_ACTUAL = "/sightly/actualresource.html";
-    private static final String SLING_TEMPLATE = "/sightly/template.html";
-    private static final String SLING_TEMPLATE_BAD_IDENTIFIER = "/sightly/template.bad-id.html";
-    private static final String SLING_JS_USE = "/sightly/use.jsuse.html";
-    private static final String SLING_JS_DEPENDENCY_RESOLUTION = "/sightly/use-sibling-dependency-resolution.html";
-    private static final String SLING_USE_INHERITANCE_WITHOVERLAY = "/sightly/useinheritance.html";
-    private static final String SLING_USE_INHERITANCE_WITHOUTOVERLAY = "/sightly/useinheritance.notoverlaid.html";
-    private static final String SLING_USE_INHERITANCE_AND_OVERLAY = "/sightly/inherit.html";
-    private static final String SLING_JAVA_USE_POJO_UPDATE = "/sightly/use.repopojo.html";
-    private static final String SLING_ATTRIBUTE_QUOTES = "/sightly/attributequotes.html";
-    private static final String SLING_CRLF = "/sightly/crlf";
+    private static final String SLING_USE = "/content/sightly/use.html";
+    private static final String SLING_JAVA_USE_NPE = "/content/sightly/use.javaerror.html";
+    private static final String SLING_JAVA_USE_INTERFACE = "/content/sightly/use.interface.html";
+    private static final String SLING_JAVA_USE_ABSTRACT = "/content/sightly/use.abstractClass.html";
+    private static final String SLING_JAVA_USE_SLING_MODEL_ERROR = "/content/sightly/use.slingmodel-error.html";
+    private static final String SLING_RESOURCE = "/content/sightly/resource.html";
+    private static final String SLING_RESOURCE_ACTUAL = "/content/sightly/actualresource.html";
+    private static final String SLING_TEMPLATE = "/content/sightly/template.html";
+    private static final String SLING_TEMPLATE_BAD_IDENTIFIER = "/content/sightly/template.bad-id.html";
+    private static final String SLING_JS_USE = "/content/sightly/use.jsuse.html";
+    private static final String SLING_JS_DEPENDENCY_RESOLUTION = "/content/sightly/use-sibling-dependency-resolution.html";
+    private static final String SLING_USE_INHERITANCE_WITHOVERLAY = "/content/sightly/useinheritance.html";
+    private static final String SLING_USE_INHERITANCE_WITHOUTOVERLAY = "/content/sightly/useinheritance.notoverlaid.html";
+    private static final String SLING_USE_INHERITANCE_AND_OVERLAY = "/content/sightly/inherit.html";
+    private static final String SLING_JAVA_USE_POJO_UPDATE = "/content/sightly/use.repopojo.html";
+    private static final String SLING_ATTRIBUTE_QUOTES = "/content/sightly/attributequotes.html";
+    private static final String SLING_CRLF = "/content/sightly/crlf";
     private static final String SLING_CRLF_NOPKG = SLING_CRLF + ".nopkg.html";
     private static final String SLING_CRLF_PKG = SLING_CRLF + ".pkg.html";
     private static final String SLING_CRLF_WRONGPKG = SLING_CRLF + ".wrongpkg.html";
-    private static final String SLING_SCRIPT_UPDATE = "/sightly/update.html";
-    private static final String SLING_REQUEST_ATTRIBUTES = "/sightly/requestattributes.html";
-    private static final String SLING_REQUEST_ATTRIBUTES_INCLUDE = "/sightly/requestattributes.include.html";
-    private static final String SLING_RESOURCE_USE = "/sightly/use.resource.html";
-    private static final String SLING_I18N = "/sightly/i18n";
+    private static final String SLING_SCRIPT_UPDATE = "/content/sightly/update.html";
+    private static final String SLING_REQUEST_ATTRIBUTES = "/content/sightly/requestattributes.html";
+    private static final String SLING_REQUEST_ATTRIBUTES_INCLUDE = "/content/sightly/requestattributes.include.html";
+    private static final String SLING_RESOURCE_USE = "/content/sightly/use.resource.html";
+    private static final String SLING_I18N = "/content/sightly/i18n";
     private static final String TCK_XSS = "/sightlytck/exprlang/xss.html";
-    private static final String WHITESPACE = "/sightly/whitespace.html";
-    private static final String SYNTHETIC_RESOURCE = "/sightly/synthetic-resource.html";
+    private static final String WHITESPACE = "/content/sightly/whitespace.html";
+    private static final String SYNTHETIC_RESOURCE = "/content/sightly/synthetic-resource.html";
     private static final String PRECOMPILED = "/sightly-testing/precompiled.html";
 
     @BeforeClass
     public static void init() {
         launchpadURL = System.getProperty("launchpad.http.server.url");
-        client = new Client(System.getProperty(io.sightly.tck.Constants.SYS_PROP_USER, "admin"),
-                System.getProperty(io.sightly.tck.Constants.SYS_PROP_PASS, "admin"));
+        client = new Client();
     }
 
     @Test
@@ -144,9 +143,9 @@ public class SlingSpecificsSightlyIT {
         assertEquals("selectors: a.c", HTMLExtractor.innerHTML(url, pageContent, "#removeselectors-remove-b span.selectors"));
         assertEquals("selectors: a.b.c", HTMLExtractor.innerHTML(url, pageContent, "#addselectors span.selectors"));
         assertEquals("It works", HTMLExtractor.innerHTML(url, pageContent, "#dot"));
-        assertEquals("path: /sightly/text.txt", HTMLExtractor.innerHTML(url, pageContent, "#extension-selectors span.path"));
+        assertEquals("path: /content/sightly/text.txt", HTMLExtractor.innerHTML(url, pageContent, "#extension-selectors span.path"));
         assertEquals("selectors: a.b", HTMLExtractor.innerHTML(url, pageContent, "#extension-selectors span.selectors"));
-        assertEquals("path: /sightly/text.txt", HTMLExtractor.innerHTML(url, pageContent, "#extension-replaceselectors span.path"));
+        assertEquals("path: /content/sightly/text.txt", HTMLExtractor.innerHTML(url, pageContent, "#extension-replaceselectors span.path"));
         assertEquals("selectors: c", HTMLExtractor.innerHTML(url, pageContent, "#extension-replaceselectors span.selectors"));
     }
 
@@ -155,24 +154,27 @@ public class SlingSpecificsSightlyIT {
         String url = launchpadURL + SLING_RESOURCE;
         String pageContent = client.getStringContent(url, 200);
 
-        assertEquals("resource.with.dots.in.path", HTMLExtractor.innerHTML(url, pageContent, "#_sightly_resource_with_dots_in_path span" +
+        assertEquals("resource.with.dots.in.path", HTMLExtractor.innerHTML(url, pageContent,
+                "#_content_sightly_resource_with_dots_in_path span" +
                 ".name"));
-        assertEquals("/sightly/resource.with.dots.in.path", HTMLExtractor.innerHTML(url, pageContent, "#_sightly_resource_with_dots_in_path span" +
+        assertEquals("/content/sightly/resource.with.dots.in.path", HTMLExtractor.innerHTML(url, pageContent,
+                "#_content_sightly_resource_with_dots_in_path span" +
                 ".path"));
-        assertEquals("false", HTMLExtractor.innerHTML(url, pageContent, "#_sightly_resource_with_dots_in_path span" +
+        assertEquals("false", HTMLExtractor.innerHTML(url, pageContent, "#_content_sightly_resource_with_dots_in_path span" +
                 ".synthetic"));
 
-        assertEquals("nonexistingresource", HTMLExtractor.innerHTML(url, pageContent, "#_sightly_nonexistingresource span" +
+        assertEquals("nonexistingresource", HTMLExtractor.innerHTML(url, pageContent, "#_content_sightly_nonexistingresource span" +
                 ".name"));
-        assertEquals("/sightly/nonexistingresource", HTMLExtractor.innerHTML(url, pageContent, "#_sightly_nonexistingresource span" +
+        assertEquals("/content/sightly/nonexistingresource", HTMLExtractor.innerHTML(url, pageContent,
+                "#_content_sightly_nonexistingresource span" +
                 ".path"));
-        assertEquals("true", HTMLExtractor.innerHTML(url, pageContent, "#_sightly_nonexistingresource span.synthetic"));
+        assertEquals("true", HTMLExtractor.innerHTML(url, pageContent, "#_content_sightly_nonexistingresource span.synthetic"));
 
-        assertEquals("resource", HTMLExtractor.innerHTML(url, pageContent, "#_sightly_resource span" +
+        assertEquals("resource", HTMLExtractor.innerHTML(url, pageContent, "#_content_sightly_resource span" +
                 ".name"));
-        assertEquals("/sightly/resource", HTMLExtractor.innerHTML(url, pageContent, "#_sightly_resource span" +
+        assertEquals("/content/sightly/resource", HTMLExtractor.innerHTML(url, pageContent, "#_content_sightly_resource span" +
                 ".path"));
-        assertEquals("false", HTMLExtractor.innerHTML(url, pageContent, "#_sightly_resource span.synthetic"));
+        assertEquals("false", HTMLExtractor.innerHTML(url, pageContent, "#_content_sightly_resource span.synthetic"));
         assertEquals("", HTMLExtractor.innerHTML(url, pageContent, "#wrapper-no-recursion"));
     }
 
@@ -301,9 +303,12 @@ public class SlingSpecificsSightlyIT {
         String url = launchpadURL + SLING_ATTRIBUTE_QUOTES;
         String pageContent = client.getStringContent(url, 200);
         // need to test against the raw content
-        assertTrue(pageContent.contains("<span data-resource='{\"resource\" : \"/sightly/attributequotes\"}'>/sightly/attributequotes</span>"));
-        assertTrue(pageContent.contains("<span data-resource=\"/sightly/attributequotes\">/sightly/attributequotes</span>"));
-        assertTrue(pageContent.contains("<span data-resource=\"/sightly/attributequotes\">/sightly/attributequotes</span>"));
+        assertTrue(pageContent.contains("<span data-resource='{\"resource\" : " +
+                "\"/content/sightly/attributequotes\"}'>/content/sightly/attributequotes</span>"));
+        assertTrue(pageContent.contains("<span data-resource=\"/content/sightly/attributequotes\">/content/sightly/attributequotes</span" +
+                ">"));
+        assertTrue(pageContent.contains("<span data-resource=\"/content/sightly/attributequotes\">/content/sightly/attributequotes</span" +
+                ">"));
     }
 
     @Test
@@ -433,7 +438,6 @@ public class SlingSpecificsSightlyIT {
 
     @Test
     public void testSlingTemplatesAccessControlRepositoryScripts() {
-        Client client = new Client();
         String classic = launchpadURL + "/content/sightly-testing/templates-access-control/classic.html";
         String classicPageContent = client.getStringContent(classic, 200);
         assertEquals("template loaded", HTMLExtractor.innerHTML(classic, classicPageContent, "div.wrapper > div.include-wrapper > div" +
@@ -442,7 +446,6 @@ public class SlingSpecificsSightlyIT {
 
     @Test
     public void testSlingTemplatesAccessControlBundledScripts() {
-        Client client = new Client();
         String precompiled = launchpadURL + "/content/sightly-testing/templates-access-control/precompiled.html";
         String precompiledPageContent = client.getStringContent(precompiled, 200);
         assertEquals("template loaded", HTMLExtractor.innerHTML(precompiled, precompiledPageContent, "div.precompiled-wrapper > div" +

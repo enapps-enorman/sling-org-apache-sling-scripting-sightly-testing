@@ -61,6 +61,7 @@ public class SlingSpecificsSightlyIT {
     private static final String SLING_CRLF_NOPKG = SLING_CRLF + ".nopkg.html";
     private static final String SLING_CRLF_PKG = SLING_CRLF + ".pkg.html";
     private static final String SLING_CRLF_WRONGPKG = SLING_CRLF + ".wrongpkg.html";
+    private static final String SLING_FORMAT = "/content/sightly/format.html";
     private static final String SLING_SCRIPT_UPDATE = "/content/sightly/update.html";
     private static final String SLING_REQUEST_ATTRIBUTES = "/content/sightly/requestattributes.html";
     private static final String SLING_REQUEST_ATTRIBUTES_INCLUDE = "/content/sightly/requestattributes.include.html";
@@ -377,6 +378,16 @@ public class SlingSpecificsSightlyIT {
         String pageContent = client.getStringContent(url, 200);
         assertEquals("die Bank", HTMLExtractor.innerHTML(url, pageContent, "#i18n-basename-finance"));
         assertEquals("das Ufer", HTMLExtractor.innerHTML(url, pageContent, "#i18n-nobasename"));
+    }
+
+    @Test
+    public void testFormatWithPredefinedStyles() {
+        String url = launchpadURL + SLING_FORMAT;
+        String pageContent = client.getStringContent(url, 200);
+        assertEquals("01.12.1918", HTMLExtractor.innerHTML(url, pageContent, "#format-date-1"));
+        assertEquals("01.12.18", HTMLExtractor.innerHTML(url, pageContent, "#format-date-2"));
+        assertEquals("01.12.18", HTMLExtractor.innerHTML(url, pageContent, "#format-date-3"));
+        assertEquals("Sonntag, 1. Dezember 1918", HTMLExtractor.innerHTML(url, pageContent, "#format-date-4"));
     }
 
     @Test

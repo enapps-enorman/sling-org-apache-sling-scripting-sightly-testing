@@ -118,7 +118,6 @@
     org.apache.sling/org.apache.sling.serviceuser.webconsole/1.0.2
     org.apache.sling/org.apache.sling.servlets.get/2.1.40
     org.apache.sling/org.apache.sling.servlets.post/2.3.36
-    org.apache.sling/org.apache.sling.servlets.resolver.api/1.0.0-SNAPSHOT
     org.apache.sling/org.apache.sling.servlets.resolver/2.7.13-SNAPSHOT
     org.apache.sling/org.apache.sling.xss/2.1.18
     javax.mail/mail/1.5.0-b01

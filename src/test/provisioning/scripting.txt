@@ -31,6 +31,7 @@
 
 
     org.apache.sling/org.apache.sling.scripting.api/2.2.0
+    org.apache.sling/org.apache.sling.scripting.spi
     org.apache.sling/org.apache.sling.scripting.core
     org.apache.sling/org.apache.sling.scripting.javascript/3.1.2
     org.apache.sling/org.apache.sling.scripting.jsp/2.4.0

@@ -191,7 +191,8 @@ Require-Capability: osgi.extender;filter:="(&(osgi.extender=sling.scripting)(ver
                             <runmode>${sling.run.modes}</runmode>
                             <contextPath>${http.base.path}</contextPath>
                             <!-- use Java8 compatible date/number formatting: https://docs.oracle.com/javase/9/migrate/toc.htm#JSMIG-GUID-A20F2989-BFA9-482D-8618-6CBB4BAAE310 -->
-                            <vmOpts>-Xmx1024m -XX:MaxPermSize=256m -Djava.awt.headless=true -Djava.locale.providers=COMPAT,CLDR</vmOpts>
+                            <!-- SLING-10698 use GMT timezone so dateformat related tests from io.sightly.tck are not off by hours -->
+                            <vmOpts>-Xmx1024m -XX:MaxPermSize=256m -Djava.awt.headless=true -Djava.locale.providers=COMPAT,CLDR -Duser.timezone=GMT</vmOpts>
                             <debug>${debug.options}</debug>
                         </server>
                     </servers>

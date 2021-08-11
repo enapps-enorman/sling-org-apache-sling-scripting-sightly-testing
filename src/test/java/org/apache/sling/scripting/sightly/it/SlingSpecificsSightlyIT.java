@@ -112,6 +112,47 @@ public class SlingSpecificsSightlyIT {
         assertEquals("ENUM_CONSTANT", HTMLExtractor.innerHTML(url, pageContent, "#test-enum"));
     }
 
+    /**
+     * SLING-10677
+     */
+    @Test
+    public void testEnumValueAsString() {
+        String url = launchpadURL + SLING_USE;
+        String pageContent = client.getStringContent(url, 200);
+        assertEquals("ENUM_CONSTANT", HTMLExtractor.innerHTML(url, pageContent, "#test-enum-value"));
+    }
+
+    /**
+     * SLING-10677
+     */
+    @Test
+    public void testEnumStaticFieldAsString() {
+        String url = launchpadURL + SLING_USE;
+        String pageContent = client.getStringContent(url, 200);
+        assertEquals("static field1", HTMLExtractor.innerHTML(url, pageContent, "#test-enum-staticfield"));
+    }
+
+    /**
+     * SLING-10677
+     */
+    @Test
+    public void testEnumStaticMethodAsString() {
+        String url = launchpadURL + SLING_USE;
+        String pageContent = client.getStringContent(url, 200);
+        assertEquals("something", HTMLExtractor.innerHTML(url, pageContent, "#test-enum-staticmethod"));
+    }
+
+    /**
+     * SLING-10677
+     */
+    @Test
+    public void testEnumValuesAsString() {
+        String url = launchpadURL + SLING_USE;
+        String pageContent = client.getStringContent(url, 200);
+        assertEquals("ENUM_CONSTANT", HTMLExtractor.innerHTML(url, pageContent, "#test-enum-value2-0"));
+        assertEquals("ENUM_CONSTANT2", HTMLExtractor.innerHTML(url, pageContent, "#test-enum-value2-1"));
+    }
+
     @Test
     public void testErroneousUseObject() {
         String url = launchpadURL + SLING_JAVA_USE_NPE;

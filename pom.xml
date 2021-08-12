@@ -31,7 +31,7 @@
         The versioning scheme defined here corresponds to SLING-7406 (<module_version>-<htl_specification_version>). Take care when
         releasing to only increase the first part, unless the module provides support for a newer version of the HTL specification.
     -->
-    <version>1.0.33-1.4.0-SNAPSHOT</version>
+    <version>1.0.32-1.4.0</version>
 
     <name>Apache Sling Scripting HTL Testing</name>
     <description>This project runs the integration tests for validating the Apache Sling Scripting HTL implementation
@@ -42,7 +42,7 @@
         <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-scripting-sightly-testing.git</connection>
         <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-scripting-sightly-testing.git</developerConnection>
         <url>https://gitbox.apache.org/repos/asf?p=sling-org-apache-sling-scripting-sightly-testing.git</url>
-      <tag>HEAD</tag>
+      <tag>org.apache.sling.scripting.sightly.testing-1.0.32-1.4.0</tag>
   </scm>
 
     <properties>
@@ -74,7 +74,7 @@
         <debug.options />
         <keepInstanceRunning>false</keepInstanceRunning>
 
-        <project.build.outputTimestamp>2021-08-11T23:49:31Z</project.build.outputTimestamp>
+        <project.build.outputTimestamp>2021-08-11T23:47:53Z</project.build.outputTimestamp>
     </properties>
 
     <build>

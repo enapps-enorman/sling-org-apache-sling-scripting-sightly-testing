@@ -31,7 +31,7 @@
         The versioning scheme defined here corresponds to SLING-7406 (<module_version>-<htl_specification_version>). Take care when
         releasing to only increase the first part, unless the module provides support for a newer version of the HTL specification.
     -->
-    <version>1.0.32-1.4.0</version>
+    <version>1.0.33-1.4.0-SNAPSHOT</version>
 
     <name>Apache Sling Scripting HTL Testing</name>
     <description>This project runs the integration tests for validating the Apache Sling Scripting HTL implementation
@@ -42,7 +42,7 @@
         <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-scripting-sightly-testing.git</connection>
         <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-scripting-sightly-testing.git</developerConnection>
         <url>https://gitbox.apache.org/repos/asf?p=sling-org-apache-sling-scripting-sightly-testing.git</url>
-      <tag>org.apache.sling.scripting.sightly.testing-1.0.32-1.4.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <properties>
@@ -74,7 +74,7 @@
         <debug.options />
         <keepInstanceRunning>false</keepInstanceRunning>
 
-        <project.build.outputTimestamp>2022-08-08T14:40:11Z</project.build.outputTimestamp>
+        <project.build.outputTimestamp>2022-08-08T14:41:08Z</project.build.outputTimestamp>
     </properties>
 
     <build>
@@ -318,7 +318,7 @@ Require-Capability: osgi.extender;filter:="(&(osgi.extender=sling.scripting)(ver
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.api</artifactId>
-            <version>2.26.0</version>
+            <version>2.26.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -390,13 +390,13 @@ Require-Capability: osgi.extender;filter:="(&(osgi.extender=sling.scripting)(ver
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly</artifactId>
-            <version>1.4.20-1.4.0</version>
+            <version>1.4.21-1.4.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.js.provider</artifactId>
-            <version>1.2.8</version>
+            <version>1.2.9-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -421,19 +421,19 @@ Require-Capability: osgi.extender;filter:="(&(osgi.extender=sling.scripting)(ver
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.servlets.resolver</artifactId>
-            <version>2.9.8</version>
+            <version>2.9.9-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.resourceresolver</artifactId>
-            <version>1.10.0</version>
+            <version>1.10.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.engine</artifactId>
-            <version>2.10.2</version>
+            <version>2.10.3-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 

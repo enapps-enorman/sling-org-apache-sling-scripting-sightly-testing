@@ -268,13 +268,6 @@ Require-Capability: osgi.extender;filter:="(&(osgi.extender=sling.scripting)(ver
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <configuration>
-                    <releaseProfiles>release</releaseProfiles>
-                </configuration>
-            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>

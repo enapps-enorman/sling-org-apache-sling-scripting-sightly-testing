@@ -34,7 +34,6 @@ import org.apache.http.impl.client.BasicAuthCache;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.sling.testing.clients.SlingClient;
 import org.apache.sling.testing.junit.rules.SlingInstanceRule;
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
@@ -140,13 +139,6 @@ public class LaunchpadReadyIT {
                 }
             }
         }
-    }
-
-    @Test
-    public void testLaunchpadReady() throws Exception {
-        SlingClient client = SLING_INSTANCE_RULE.getAdminClient();
-        client.waitUntilExists("/apps/sightly", 1000, 60);
-        client.waitUntilExists("/sightlytck", 1000, 60);
     }
 
     private static class BundleStatus {

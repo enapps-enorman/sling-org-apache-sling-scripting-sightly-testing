@@ -423,13 +423,27 @@ public class SlingSpecificsSightlyIT {
     }
 
     @Test
-    public void testFormatWithPredefinedStyles() {
+    public void testFormatDateWithPredefinedStyles() {
         String url = launchpadURL + SLING_FORMAT;
         String pageContent = client.getStringContent(url, 200);
         assertEquals("01.12.1918", HTMLExtractor.innerHTML(url, pageContent, "#format-date-1"));
         assertEquals("01.12.18", HTMLExtractor.innerHTML(url, pageContent, "#format-date-2"));
         assertEquals("01.12.18", HTMLExtractor.innerHTML(url, pageContent, "#format-date-3"));
         assertEquals("Sonntag, 1. Dezember 1918", HTMLExtractor.innerHTML(url, pageContent, "#format-date-4"));
+    }
+
+    @Test
+    public void testFormatStringWithIcuPlural() {
+        String url = launchpadURL + SLING_FORMAT;
+        String pageContent = client.getStringContent(url, 200);
+        assertEquals("0 results", HTMLExtractor.innerHTML(url, pageContent, "#format-icu-plural-zero"));
+        assertEquals("1 result", HTMLExtractor.innerHTML(url, pageContent, "#format-icu-plural-one"));
+        assertEquals("3 results", HTMLExtractor.innerHTML(url, pageContent, "#format-icu-plural-few"));
+        assertEquals("15 results", HTMLExtractor.innerHTML(url, pageContent, "#format-icu-plural-many"));
+        assertEquals("0 v&yacute;sledků", HTMLExtractor.innerHTML(url, pageContent, "#format-icu-plural-zero-cs"));
+        assertEquals("1 v&yacute;sledek", HTMLExtractor.innerHTML(url, pageContent, "#format-icu-plural-one-cs"));
+        assertEquals("3 v&yacute;sledky", HTMLExtractor.innerHTML(url, pageContent, "#format-icu-plural-few-cs"));
+        assertEquals("15 v&yacute;sledků", HTMLExtractor.innerHTML(url, pageContent, "#format-icu-plural-many-cs"));
     }
 
     @Test

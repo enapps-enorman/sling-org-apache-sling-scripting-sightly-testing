@@ -79,3 +79,6 @@
 
     org.apache.sling.jcr.resource.internal.JcrResourceResolverFactoryImpl
         resource.resolver.searchpath=["/apps", "/libs", "/sightlytck/scripts"]
+
+    org.apache.sling.scripting.sightly.impl.engine.SightlyEngineConfiguration
+      scriptResolutionCacheSize=I"4096"

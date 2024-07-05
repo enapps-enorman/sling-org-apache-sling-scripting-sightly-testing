@@ -383,7 +383,7 @@ Require-Capability: osgi.extender;filter:="(&(osgi.extender=sling.scripting)(ver
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly</artifactId>
-            <version>1.4.21-1.4.0-SNAPSHOT</version>
+            <version>1.4.23-1.4.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

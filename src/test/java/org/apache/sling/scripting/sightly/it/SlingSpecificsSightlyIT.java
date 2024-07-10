@@ -412,6 +412,7 @@ public class SlingSpecificsSightlyIT {
         assertEquals("foobar-somejava", HTMLExtractor.innerHTML(url, pageContent, "#somejava .data"));
         assertEquals("foobar-somejs", HTMLExtractor.innerHTML(url, pageContent, "#somejs .data"));
         assertEquals("foobar-someecma", HTMLExtractor.innerHTML(url, pageContent, "#someecma .data"));
+        assertEquals("foobar-somejs", HTMLExtractor.innerHTML(url, pageContent, ".resource-wrapper #partial-somejs .data"));
     }
 
     @Test

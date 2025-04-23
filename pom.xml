@@ -311,7 +311,7 @@ Require-Capability: osgi.extender;filter:="(&(osgi.extender=sling.scripting)(ver
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.api</artifactId>
-            <version>2.26.0</version>
+            <version>2.27.2</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -383,7 +383,7 @@ Require-Capability: osgi.extender;filter:="(&(osgi.extender=sling.scripting)(ver
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly</artifactId>
-            <version>1.4.26-1.4.0</version>
+            <version>1.4.27-1.4.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -408,13 +408,13 @@ Require-Capability: osgi.extender;filter:="(&(osgi.extender=sling.scripting)(ver
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.core</artifactId>
-            <version>2.4.8</version>
+            <version>2.4.10</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.servlets.resolver</artifactId>
-            <version>2.9.8</version>
+            <version>2.9.14</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

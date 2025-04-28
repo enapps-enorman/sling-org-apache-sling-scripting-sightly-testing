@@ -31,7 +31,7 @@
         The versioning scheme defined here corresponds to SLING-7406 (<module_version>-<htl_specification_version>). Take care when
         releasing to only increase the first part, unless the module provides support for a newer version of the HTL specification.
     -->
-    <version>1.0.40-1.4.0</version>
+    <version>1.0.41-1.4.0-SNAPSHOT</version>
 
     <name>Apache Sling Scripting HTL Testing</name>
     <description>This project runs the integration tests for validating the Apache Sling Scripting HTL implementation
@@ -74,7 +74,7 @@
         <debug.options />
         <keepInstanceRunning>false</keepInstanceRunning>
 
-        <project.build.outputTimestamp>2025-04-28T12:04:15Z</project.build.outputTimestamp>
+        <project.build.outputTimestamp>2025-04-28T12:07:41Z</project.build.outputTimestamp>
     </properties>
 
     <build>
@@ -383,13 +383,13 @@ Require-Capability: osgi.extender;filter:="(&(osgi.extender=sling.scripting)(ver
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly</artifactId>
-            <version>1.4.28-1.4.0</version>
+            <version>1.4.29-1.4.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.sightly.js.provider</artifactId>
-            <version>1.2.14</version>
+            <version>1.2.15-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
